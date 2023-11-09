@@ -1,5 +1,8 @@
+<?php include 'connection.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +10,28 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
-    <?php echo ("test"); ?>
-    <?php for ($a=0;$a<10;$a++){ ?>
- 
-    <a href ="detail.php?id=<?php echo $a;?>"><div class="project"><h1> Project <?php echo $a; ?></h1></div></a>
 
- <?php }; ?>
+<body>
+
+
+        <?php
+        $stmt = $conn->prepare("SELECT * FROM idhoenkieplankie");
+        $stmt->execute(); 
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+
+        foreach($stmt->fetchAll() as $k=>$v) { ?>
+
+        <a href="detail.php?id=<?php echo $a; ?>">
+        <div class="project">
+        <h1> Project
+        <?php echo $a; ?>
+        </h1>
+        </div>
+        </a>
+
+    <?php }
+    ; ?>
 </body>
+
 </html>
