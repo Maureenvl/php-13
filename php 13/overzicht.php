@@ -8,7 +8,11 @@
     <title>Document</title>
 </head>
 <body>
+    <?php echo ("test"); ?>
+    <?php for ($a=0;$a<10;$a++){ ?>
  
-<a href ="detail.html"><div class="project"><h1> Project 1</h1></div></a>
+    <a href ="detail.html"><div class="project"><h1> Project 1</h1></div></a>
+
+ <?php }; ?>
 </body>
 </html>
