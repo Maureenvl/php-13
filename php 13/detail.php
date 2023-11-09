@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-<h1> Project 1 test</h1>
+<h1> Project <?php echo $_GET["id"];?> test</h1>
 </body>
 </html>

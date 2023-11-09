@@ -11,7 +11,7 @@
     <?php echo ("test"); ?>
     <?php for ($a=0;$a<10;$a++){ ?>
  
-    <a href ="detail.html"><div class="project"><h1> Project <?php echo $a ?></h1></div></a>
+    <a href ="detail.php?id=<?php echo $a;?>"><div class="project"><h1> Project <?php echo $a; ?></h1></div></a>
 
  <?php }; ?>
 </body>
