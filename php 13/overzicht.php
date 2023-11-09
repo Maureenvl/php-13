@@ -22,10 +22,10 @@
 
         foreach($stmt->fetchAll() as $k=>$v) { ?>
 
-        <a href="detail.php?id=<?php echo $a; ?>">
+        <a href="detail.php?id=<?php echo $v["id"]; ?>">
         <div class="project">
         <h1> Project
-        <?php echo $a; ?>
+        <?php echo $v["title"]; ?>
         </h1>
         </div>
         </a>
