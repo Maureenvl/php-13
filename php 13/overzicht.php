@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-
-   <a href ="detailpagina.php"><div class="project"><h1> Project 1 test</h1></div></a>
+ 
+<a href ="detail.html"><div class="project"><h1> Project 1</h1></div></a>
 </body>
 </html>
