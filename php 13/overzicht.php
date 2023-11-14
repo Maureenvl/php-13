@@ -12,25 +12,42 @@
 
 <body>
 
+<form method="get" action="">
+<input type="search" name="zoeken" placeholder="zoeken naar...">
+<input type="submit" value="zoeken">
+</form>
+
+<?php
+if (isset($_GET["zoeken"]))
+{
+echo ($_GET["zoeken"]);
+}
+?>
+
+
 
         <?php
-        $stmt = $conn->prepare("SELECT * FROM projects");
+        // echo'test';
+        // $stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests");
+        $stmt = $conn->prepare("SELECT * FROM projects WHERE title LIKE':zoeken' ORDER BY id DESC");
+        $stmt->bindParam(':zoeken', $_GET["id"]);
+
+
         $stmt->execute(); 
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        foreach($stmt->fetchAll() as $k => $v) { ?>
 
-
-        foreach($stmt->fetchAll() as $k=>$v) { ?>
-
-        <a href="detail.php?id=<?php echo $v["id"]; ?>">
-        <div class="project">
-        <h1> Project
-        <?php echo $v["title"]; ?>
-        </h1>
+         <a href="detail.php?id=<?php echo $v["id"]; ?>">
+           <div class="project">
+            <h1><?php echo $v["title"]; ?></h1>
+            <?php echo $v["korte_omschrijving"]; ?><br>
+            <?php echo $v["jaar"]; ?><br>
+            
         </div>
-        </a>
+    </a>
 
-    <?php }
-    ; ?>
+    <?php } ; ?>
+
 </body>
 
 </html>
