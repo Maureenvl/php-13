@@ -38,17 +38,6 @@
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
         foreach ($stmt->fetchAll() as $k => $v) { ?>
 
-          <!-- <a href="detail.php?id=<?php echo $v["id"]; ?>">
-            <div class="project">
-              <h1>
-                <?php echo $v["title"]; ?>
-              </h1>
-              <?php echo $v["korte_omschrijving"]; ?><br>
-              <?php echo $v["jaar"]; ?><br>
-
-            </div>
-          </a> -->
-
           <div id="project1" class="project card shadow-sm card-body m-2">
             <div class="card-text">
               <h2>
@@ -84,105 +73,6 @@
 
 
 
-        <div id="project1" class="project card shadow-sm card-body m-2">
-          <div class="card-text">
-            <h2>Titel van project 1.</h2>
-            <div>Hier komt een korte omschrijving van het project.</div>
-          </div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                View
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Edit
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div id="project1" class="project card shadow-sm card-body m-2">
-          <div class="card-text">
-            <h2>Titel van project 2.</h2>
-            <div>Hier komt een korte omschrijving van het project.</div>
-          </div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                View
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Edit
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div id="project1" class="project card shadow-sm card-body m-2">
-          <div class="card-text">
-            <h2>Titel van project 3.</h2>
-            <div>Hier komt een korte omschrijving van het project.</div>
-          </div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                View
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Edit
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div id="project1" class="project card shadow-sm card-body m-2">
-          <div class="card-text">
-            <h2>Titel van project 4.</h2>
-            <div>Hier komt een korte omschrijving van het project.</div>
-          </div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                View
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Edit
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div id="project1" class="project card shadow-sm card-body m-2">
-          <div class="card-text">
-            <h2>Titel van project 5.</h2>
-            <div>Hier komt een korte omschrijving van het project.</div>
-          </div>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                View
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Edit
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
 
       <div class="d-flex justify-content-center align-items-center m-4">
