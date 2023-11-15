@@ -21,6 +21,21 @@
             aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list"
             aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto"
             style="position: relative; vertical-align: top;">
+
+          <form method="get" action="index.php">
+            <input type="search" name="zoeken" placeholder="Search...">
+            <input type="submit" value="zoeken">
+          </form>
+
+          <?php
+          if (isset($_GET["zoeken"])) 
+          {
+            echo ($_GET["zoeken"]);
+          }
+          ?>
+
+
+
         </nav>
       </div>
 
@@ -28,15 +43,25 @@
       <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1 projects">
         <!-- doei -->
         <?php
+        // $zoeken = '%'. $_GET["zoeken"] .'%';
 
-        //  $stmt = $conn->prepare("SELECT * FROM projects WHERE title LIKE':zoeken' ORDER BY id DESC");
-        // $stmt->bindParam(':zoeken', $_GET["id"]);
-        
+        // echo "hallo wereld";
+        if (isset($_GET["zoeken"])) {
+        //  echo "hallo wereld";
+        $zoeken = '%'. $_GET["zoeken"] .'%';
+         $stmt = $conn->prepare("SELECT * FROM projects WHERE title LIKE :zoeken ORDER BY id DESC");
+         $stmt->bindParam(':zoeken', $zoeken) ;
+        } else {
         $stmt = $conn->prepare("SELECT * FROM projects ORDER BY id DESC");
+       }
+
+
+
+
 
         $stmt->execute();
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        foreach ($stmt->fetchAll() as $k => $v) { ?>
+        foreach ($stmt->fetchAll() as $k => $v) { ?> 
 
           <div id="project1" class="project card shadow-sm card-body m-2">
             <div class="card-text">
@@ -52,9 +77,10 @@
             </div>
             <div class="d-flex justify-content-between align-items-center mt-3">
               <div class="btn-group">
-              <a href="detail.php?id=<?php echo $v["id"]; ?>"> <button type="button" class="btn btn-sm btn-outline-secondary"> 
-                  View
-                </button></a>
+                <a href="detail.php?id=<?php echo $v["id"]; ?>"> <button type="button"
+                    class="btn btn-sm btn-outline-secondary">
+                    View
+                  </button></a>
                 <button type="button" class="btn btn-sm btn-outline-secondary">
                   Edit
                 </button>
