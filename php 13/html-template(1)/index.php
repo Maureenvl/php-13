@@ -17,10 +17,7 @@
     <div class="container">
       <div class="d-flex justify-content-center align-items-center m-4">
         <nav aria-label="search and filter">
-          <input type="search" class="form-control ds-input" id="search-input" placeholder="Search..."
-            aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list"
-            aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto"
-            style="position: relative; vertical-align: top;">
+
 
           <form method="get" action="index.php">
             <input type="search" name="zoeken" placeholder="Search...">
