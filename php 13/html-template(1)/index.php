@@ -28,8 +28,7 @@
           </form>
 
           <?php
-          if (isset($_GET["zoeken"])) 
-          {
+          if (isset($_GET["zoeken"])) {
             echo ($_GET["zoeken"]);
           }
           ?>
@@ -44,16 +43,16 @@
         <!-- doei -->
         <?php
         // $zoeken = '%'. $_GET["zoeken"] .'%';
-
+        
         // echo "hallo wereld";
         if (isset($_GET["zoeken"])) {
-        //  echo "hallo wereld";
-        $zoeken = '%'. $_GET["zoeken"] .'%';
-         $stmt = $conn->prepare("SELECT * FROM projects WHERE title LIKE :zoeken ORDER BY id DESC");
-         $stmt->bindParam(':zoeken', $zoeken) ;
+          //  echo "hallo wereld";
+          $zoeken = '%' . $_GET["zoeken"] . '%';
+          $stmt = $conn->prepare("SELECT * FROM projects WHERE title LIKE :zoeken ORDER BY id DESC");
+          $stmt->bindParam(':zoeken', $zoeken);
         } else {
-        $stmt = $conn->prepare("SELECT * FROM projects ORDER BY id DESC");
-       }
+          $stmt = $conn->prepare("SELECT * FROM projects ORDER BY id DESC");
+        }
 
 
 
@@ -61,7 +60,7 @@
 
         $stmt->execute();
         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        foreach ($stmt->fetchAll() as $k => $v) { ?> 
+        foreach ($stmt->fetchAll() as $k => $v) { ?>
 
           <div id="project1" class="project card shadow-sm card-body m-2">
             <div class="card-text">
